@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JogoDaForma:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JogoDaForma_jar</output-path>
+    <root id="archive" name="JogoDaForma.jar">
+      <element id="module-output" name="JogoDaForca" />
+    </root>
+  </artifact>
+</component>

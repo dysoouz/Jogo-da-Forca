@@ -1,0 +1,20 @@
+médico
+professor
+engenheiro
+advogado
+enfermeiro
+policial
+chef de cozinha
+designer gráfico
+arquiteto
+programador de computador
+contador
+psicólogo
+eletricista
+jornalista
+mecânico
+dentista
+fisioterapeuta
+farmacêutico
+astrônomo
+padeiro

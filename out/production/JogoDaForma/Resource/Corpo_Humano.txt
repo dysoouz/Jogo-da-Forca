@@ -1,0 +1,27 @@
+cabeça
+olhos
+orelhas
+nariz
+boca
+dentes
+língua
+pescoço
+ombros
+braços
+cotovelos
+antebraços
+mãos
+dedos
+peito
+costelas
+estômago
+abdômen
+quadril
+costas
+pernas
+coxas
+joelhos
+panturrilhas
+pés
+dedos dos pés
+tornozelos
