@@ -19,24 +19,34 @@ import java.util.Random;
 public class Janela extends JFrame implements ActionListener, KeyListener {
     private final int rows = 40, cols = 20, size = 400;
 
-    private int i =5;
+    private int i = 5;
     private JPanel pnOrganizador,pn1, pn2, pn3, pnLetrasUsadas;
     private PNteclado pNteclado;
-    private JTextField tfnomeEscondido, tfchutarLetra;
-    private JLabel lbTentativas, lbletras;
+    private JTextField tfchutarLetra;
+    private JLabel lbTentativas, lbletras, tfnomeEscondido;
     private int indicaFundo;
     private PalavrasCatalogadas palavrasCatalogadas;
     private Forca forca;
     private JButton btAnimais, btProfissao, btpdc, btVerificar;
     private ImageIcon background;
+    private Font font;
+    private String stringEscondida;
     public Janela(){
         this.setLayout(new GridLayout(4,1));
 
+        font = new Font("Arial", Font.BOLD, 24);
 
-        tfnomeEscondido = new JTextField(10);
+        tfnomeEscondido = new JLabel( "-^-^-^- ESCOLHA O TIPO FORCA -^-^-^-");
+        tfnomeEscondido.setForeground(Color.WHITE);
+        tfnomeEscondido.setFont(font);
+        tfnomeEscondido.setOpaque(true);
+        tfnomeEscondido.setBackground(Color.DARK_GRAY);
         tfnomeEscondido.setHorizontalAlignment(SwingConstants.CENTER);
-        tfnomeEscondido.setEnabled(false);
         tfchutarLetra = new JTextField(1);
+        tfchutarLetra.setForeground(Color.WHITE);
+        tfchutarLetra.setFont(font);
+        tfchutarLetra.setOpaque(true);
+        tfchutarLetra.setBackground(Color.DARK_GRAY);
 
         btAnimais = new JButton("Animais");
         btProfissao = new JButton("Profissões");
@@ -153,8 +163,8 @@ public class Janela extends JFrame implements ActionListener, KeyListener {
         tfchutarLetra.setText(tecla);
     }
     public void finalizar(String string){
-        String vencedor = "Parabéns, você venceu!";
-        String perdedor = "Perdeu otário, muito burro kkkkkkkkkkkkkk";
+        String vencedor = "Parabéns, você venceu!\n\n Resposta correta -> [ "+palavrasCatalogadas.getPalavraSelecionada()+" ]";
+        String perdedor = "Perdeu otário, muito burro kkkkkkkkkkkkkk \n\n Resposta correta -> [ "+palavrasCatalogadas.getPalavraSelecionada()+" ]";
 
         if (indicaFundo == 6){
             JOptionPane.showMessageDialog(null,perdedor);
@@ -185,6 +195,7 @@ public class Janela extends JFrame implements ActionListener, KeyListener {
             tfnomeEscondido.setText("");
             int i = random.nextInt(51);
             palavrasCatalogadas = new PalavrasCatalogadas(i,0);
+
             tfnomeEscondido.setText(esconderNome(palavrasCatalogadas.getPalavraSelecionada()));
             lbletras.setText("");
         } else if (e.getSource() == btProfissao) {
@@ -196,7 +207,7 @@ public class Janela extends JFrame implements ActionListener, KeyListener {
         } else if (e.getSource() == btpdc) {
             tfnomeEscondido.setText("");
             int i = random.nextInt(28);
-            palavrasCatalogadas = new PalavrasCatalogadas(1,2);
+            palavrasCatalogadas = new PalavrasCatalogadas(i,2);
             tfnomeEscondido.setText(esconderNome(palavrasCatalogadas.getPalavraSelecionada()));
             lbletras.setText("");
         }else if (e.getSource() == btVerificar) {
